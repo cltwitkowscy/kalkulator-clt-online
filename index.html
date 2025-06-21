@@ -62,30 +62,43 @@ To trochę jak sprawdzanie, czy krzesło nie złamie się, gdy na nim usiądzies
 <h2>🧮 Interaktywny kalkulator statyki CLT (ściana i strop)</h2>
 <p>Wprowadź dane konstrukcyjne, aby obliczyć nośność ściany i ugięcie stropu zgodnie z Eurokodem 5.</p>
 
-<form id="calcForm" style="max-width: 600px;">
-  <label>Grubość panelu [mm]</label>
-  <input id="grubosc" type="number" value="110">
-  <label>Szerokość ściany [m]</label>
-  <input id="szerokosc" type="number" value="2.5">
-  <label>Wysokość ściany [m]</label>
-  <input id="wysokosc" type="number" value="2.8">
-  <label>Rozpiętość stropu [m]</label>
-  <input id="dlugoscStropu" type="number" value="4.0">
-  <label>Obciążenie całkowite [kN/m²]</label>
-  <input id="obciazenie" type="number" value="3.5">
-  <label>Moduł sprężystości E [MPa]</label>
-  <input id="E" type="number" value="11000">
-  <label>f<sub>c,0,k</sub> [MPa]</label>
-  <input id="fck" type="number" value="21">
-  <label>k<sub>mod</sub></label>
-  <input id="kmod" type="number" value="0.9">
-  <label>γ<sub>M</sub></label>
-  <input id="gammaM" type="number" value="1.25">
-  <br>
-  <button type="button" onclick="oblicz()">Oblicz</button>
+
+<form id="calcForm" style="max-width: 700px;">
+  <table style="width: 100%; border-spacing: 10px;">
+    <tr>
+      <td><label for="grubosc">Grubość panelu [mm]</label></td>
+      <td><input id="grubosc" type="number" value="110"></td>
+      <td><label for="szerokosc">Szerokość ściany [m]</label></td>
+      <td><input id="szerokosc" type="number" value="2.5"></td>
+    </tr>
+    <tr>
+      <td><label for="wysokosc">Wysokość ściany [m]</label></td>
+      <td><input id="wysokosc" type="number" value="2.8"></td>
+      <td><label for="dlugoscStropu">Rozpiętość stropu [m]</label></td>
+      <td><input id="dlugoscStropu" type="number" value="4.0"></td>
+    </tr>
+    <tr>
+      <td><label for="obciazenie">Obciążenie całkowite [kN/m²]</label></td>
+      <td><input id="obciazenie" type="number" value="3.5"></td>
+      <td><label for="E">Moduł sprężystości E [MPa]</label></td>
+      <td><input id="E" type="number" value="11000"></td>
+    </tr>
+    <tr>
+      <td><label for="fck">f<sub>c,0,k</sub> [MPa]</label></td>
+      <td><input id="fck" type="number" value="21"></td>
+      <td><label for="kmod">k<sub>mod</sub></label></td>
+      <td><input id="kmod" type="number" value="0.9"></td>
+    </tr>
+    <tr>
+      <td><label for="gammaM">γ<sub>M</sub></label></td>
+      <td><input id="gammaM" type="number" value="1.25"></td>
+      <td colspan="2"><button type="button" onclick="oblicz()">Oblicz</button></td>
+    </tr>
+  </table>
 </form>
 
 <div class="result" id="wynik" style="background:#eef; margin-top:15px; padding:10px; border:1px solid #ccc;"></div>
+
 
 <script>
 function oblicz() {
